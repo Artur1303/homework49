@@ -16,7 +16,7 @@
        <div class="container">
            <ul class="menu">
                <li><a href="{% url 'index' %}">Index</a></li>
-               <li><a href="#">Create Task</a></li>
+               <li><a href="{% url 'task_create' %}">Create Task</a></li>
                {% block menu %}{% endblock %}
            </ul>
        </div>
