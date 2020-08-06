@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block menu %}
+    <li><a href="#">Update</a></li>
+    <li><a href="#">Delete</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>{{task.summary }}</h1>
+    <p>{{ task.descriptions }}</p>
+     <p>By: {{ task.type}} </p>
+    <p>By: {{ task.status}} </p>
+    <p>Create: {{ task.created_at }}</p>
+
+
+{% endblock %}

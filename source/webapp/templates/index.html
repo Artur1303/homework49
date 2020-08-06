@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block content %}
+    <h1>My First Blog!</h1>
+    {% for task in tasks %}
+{#        <h3><a href="{% url "article_view"  %}">{{ article.title }}</a></h3>#}
+        <a href="{% url 'task_view' task.pk %}"><h1>{{ task.summary }}</h1></a>
+        <p>Статус: ({{ task.status }} </p>
+        <p>{{ task.type }}</p>
+
+        <p><a href="#">Update</a></p>
+        <p><a href="#">Delete</a></p>
+    {% endfor %}
+{% endblock %}
