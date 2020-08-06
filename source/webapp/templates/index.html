@@ -10,7 +10,7 @@
         <p>Статус: ({{ task.status }} </p>
         <p>{{ task.type }}</p>
 
-        <p><a href="#">Update</a></p>
-        <p><a href="#">Delete</a></p>
+        <p><a href="{% url 'task_update' task.pk %}">Update</a></p>
+        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>
     {% endfor %}
 {% endblock %}
