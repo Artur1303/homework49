@@ -3,7 +3,7 @@
 {% block title %}Hello{% endblock %}
 
 {% block content %}
-    <h1>My First Blog!</h1>
+    <h1>My Tasks</h1>
     {% for task in tasks %}
 {#        <h3><a href="{% url "article_view"  %}">{{ article.title }}</a></h3>#}
         <a href="{% url 'task_view' task.pk %}"><h1>{{ task.summary }}</h1></a>
