@@ -10,7 +10,7 @@
 {% block content %}
     <h1>{{task.summary }}</h1>
     <p>{{ task.descriptions }}</p>
-     <p>By: {{ task.type}} </p>
+     <p>Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p>By: {{ task.status}} </p>
     <p>Create: {{ task.created_at }}</p>
 
