@@ -3,14 +3,22 @@
 {% block title %}Hello{% endblock %}
 
 {% block content %}
-    <h1>My Tasks</h1>
+    <h1 class="my" >My Tasks</h1>
     {% for task in tasks %}
+        <div class="card border-dark text-white bg-secondary mb-3" style="max-width: 23rem;">
+  <div class="card-body">
+      <a href="{% url 'task_view' task.pk %}"><h5 class="card-title text-white">{{ task.summary }}</h5></a>
+    <h6 class="card-subtitle mb-2 text-white">Статус: ({{ task.status }}</h6>
+    <a href="{% url 'task_update' task.pk %}" class="card-link text-white">Update</a>
+    <a href="{% url 'task_delete' task.pk %}" class="card-link text-white">Delete</a>
+  </div>
+</div>
 {#        <h3><a href="{% url "article_view"  %}">{{ article.title }}</a></h3>#}
-        <a href="{% url 'task_view' task.pk %}"><h1>{{ task.summary }}</h1></a>
-        <p>Статус: ({{ task.status }} </p>
-        <p>{{ task.type }}</p>
-
-        <p><a href="{% url 'task_update' task.pk %}">Update</a></p>
-        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>
+{#        <a href="{% url 'task_view' task.pk %}"><h1>{{ task.summary }}</h1></a>#}
+{#        <p>Статус: ({{ task.status }} </p>#}
+{#        <p>{{ task.type }}</p>#}
+{##}
+{#        <p><a href="{% url 'task_update' task.pk %}">Update</a></p>#}
+{#        <p><a href="{% url 'task_delete' task.pk %}">Delete</a></p>#}
     {% endfor %}
 {% endblock %}

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{task.summary }}</h1>
+    <h1 class="my">{{task.summary }}</h1>
     <p>{{ task.descriptions }}</p>
      <p>Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p>By: {{ task.status}} </p>
