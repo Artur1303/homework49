@@ -3,15 +3,16 @@
 {% block title %}Delete{% endblock %}
 
 {% block menu %}
-    <li><a href="{% url 'task_view' task.pk %}">Отмена</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'task_view' task.pk %}">Отмена</a></li>
 {% endblock %}
 
 {% block content %}
     <h1>Вы уверены, что хотите удалить задачу "{{ task.summary }}"?</h1>
     <form action="{% url "task_delete" task.pk %}" method="post">
         {% csrf_token %}
-        <p><input type="submit" value="Да"></p>
-        <p><a href="{% url 'task_view' task.pk %}">Отмена</a></p>
+
+        <p><input class="btn btn-primary buttons"  type="submit" value="Да"></p>
+        <p><a class="btn btn-primary"  role="button" href="{% url 'task_view' task.pk %}">Отмена</a></p>
     </form>
     <h3>Описание задачи: </h3>
     <p>{{ task.descriptions }}</p>

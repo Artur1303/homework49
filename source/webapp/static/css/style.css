@@ -3,8 +3,8 @@ body {
     font-size: 16px;
     color: #444444;
 
-    /* отступ, чтобы компенсировать высоту навбара */
-    margin-top: 60px;
+    /*!* отступ, чтобы компенсировать высоту навбара *!*/
+    /*margin-top: 60px;*/
 }
 
 .container {
@@ -13,16 +13,19 @@ body {
     max-width: 900px;
 }
 
-.navbar {
-    display: block;
-    background: #6a7dff;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    font-size: 0;
-    box-sizing: border-box;
-    padding: 7px 30px;
+/*.navbar {*/
+/*    display: block;*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    left: 0;*/
+/*    font-size: 0;*/
+/*    box-sizing: border-box;*/
+/*    padding: 7px 30px;*/
+/*}*/
+
+.buttons{
+    width: 84px;
 }
 
 .menu {
