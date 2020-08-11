@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MinLengthValidator
 
 
+
 class Status(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название')
 
