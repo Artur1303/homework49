@@ -1,9 +1,11 @@
 from django.core.exceptions import ValidationError
 
 
-def at_least_int(string):
-    if str(string) == 10:
-        raise ValidationError('This value is too short!')
+def is_digit(string):
+    if string.isdigit() == True:
+        raise ValidationError('Title cannot start with numbers!')
+
+
 
 def cennz(string):
     valid = ('mat', 'fack', 'han')
