@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import MinLengthValidator
 from webapp.validator import is_digit, cennz
 
 

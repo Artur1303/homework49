@@ -2,7 +2,7 @@ from django.core.exceptions import ValidationError
 
 
 def is_digit(string):
-    if string.isdigit() == True:
+    if string.isdigit() is True:
         raise ValidationError('Title cannot start with numbers!')
 
 
