@@ -29,13 +29,7 @@ class TaskCreateView(FormView):
     form_class = TaskForm
 
     def form_valid(self, form):
-        data = {}
-        type = form.cleaned_data.pop('type')
-        for key, value in form.cleaned_data.items():
-            if value is not None:
-                data[key] = value
-        self.task = Task.objects.create(**data)
-        self.task.type.set(type)
+        self.task = form.save()
         return super().form_valid(form)
 
     def get_success_url(self):
