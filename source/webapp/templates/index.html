@@ -9,8 +9,9 @@
   <div class="card-body">
       <a href="{% url 'task_view' task.pk %}"><h5 class="card-title text-white">{{ task.summary }}</h5></a>
     <h6 class="card-subtitle mb-2 text-white">Статус: ({{ task.status }}</h6>
-    <a href="{% url 'task_update' task.pk %}" class="card-link text-white">Update</a>
-    <a href="{% url 'task_delete' task.pk %}" class="card-link text-white">Delete</a>
+    <a href="{% url 'task_update' task.pk %}" class="card-link badge badge-dark p-2  text-white">Update</a>
+    <a href="{% url 'task_delete' task.pk %}" class="card-link badge badge-dark p-2 text-white">Delete</a>
+
   </div>
 </div>
 {#        <h3><a href="{% url "article_view"  %}">{{ article.title }}</a></h3>#}
