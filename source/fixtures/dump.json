@@ -46,10 +46,13 @@
   "pk": 1,
   "fields": {
     "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443",
-    "descriptions": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430  \u0434\u043b\u044f \u0441\u0430\u0439\u0442\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430",
+    "descriptions": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430  \u0434\u043b\u044f \u0441\u0430\u0439\u0442\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430 shop",
     "status": 1,
-    "type": 1,
-    "created_at": "2020-08-06T10:40:54.962Z"
+    "created_at": "2020-08-06T10:40:54.962Z",
+    "type": [
+      2,
+      3
+    ]
   }
 },
 {
@@ -59,19 +62,8 @@
     "summary": "\u041d\u0430\u0440\u0438\u0441\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043d\u0442\u0435\u043d\u0442 \u0434\u043b\u044f \u0433\u043b\u0430\u0432\u043d\u043e\u0439",
     "descriptions": "\u041a\u0440\u0430\u0441\u0438\u0432\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0430",
     "status": 2,
-    "type": 2,
-    "created_at": "2020-08-06T10:41:34.779Z"
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 3,
-  "fields": {
-    "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c  \u043c\u043e\u0434\u0435\u043b\u044c",
-    "descriptions": "\u041c\u043e\u0434\u0435\u043b\u044c \u0441\u0430\u0439\u0442\u0430",
-    "status": 3,
-    "type": 3,
-    "created_at": "2020-08-06T10:41:58.241Z"
+    "created_at": "2020-08-06T10:41:34.779Z",
+    "type": []
   }
 },
 {
@@ -81,8 +73,8 @@
     "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c  \u0444\u043e\u0440\u043c\u0443",
     "descriptions": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c  \u0444\u043e\u0440\u043c\u0443  \u0434\u043b\u044f  \u0441\u0430\u0439\u0442\u0430",
     "status": 1,
-    "type": 3,
-    "created_at": "2020-08-06T10:42:23.616Z"
+    "created_at": "2020-08-06T10:42:23.616Z",
+    "type": []
   }
 },
 {
@@ -92,8 +84,161 @@
     "summary": "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c  \u0434\u0430\u043d\u043d\u044b\u0435",
     "descriptions": "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c  \u0434\u0430\u043d\u043d\u044b\u0435 \u0441  \u0442\u043e\u0432\u0430\u0440\u043e\u043c",
     "status": 3,
-    "type": 1,
-    "created_at": "2020-08-06T10:43:04.581Z"
+    "created_at": "2020-08-06T10:43:04.581Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 7,
+  "fields": {
+    "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443",
+    "descriptions": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430  \u0434\u043b\u044f \u0441\u0430\u0439\u0442\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430dfgdfhb",
+    "status": 1,
+    "created_at": "2020-08-06T12:31:52.476Z",
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 8,
+  "fields": {
+    "summary": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
+    "descriptions": "\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430  \u0441\u0442\u0430\u0442\u044c\u0438",
+    "status": 2,
+    "created_at": "2020-08-06T18:51:29.637Z",
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 10,
+  "fields": {
+    "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u043b  \u0433\u043b\u044f\u044e requirements.txt",
+    "descriptions": "\u043d\u0435  \u0432  \u0442\u043e\u043c  \u043c\u0435\u0441\u0442\u0435  \u0441\u043e\u0437\u0434\u0430\u043b  requirements.txt",
+    "status": 3,
+    "created_at": "2020-08-07T13:49:21.189Z",
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 12,
+  "fields": {
+    "summary": "rfe",
+    "descriptions": "referferf",
+    "status": 2,
+    "created_at": "2020-08-11T07:03:52.680Z",
+    "type": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 13,
+  "fields": {
+    "summary": "ewgwgwrwegrweg",
+    "descriptions": "wtgtr",
+    "status": 1,
+    "created_at": "2020-08-11T07:59:38.772Z",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 14,
+  "fields": {
+    "summary": "zcbzvcbdsgsgsd",
+    "descriptions": "1.2",
+    "status": 1,
+    "created_at": "2020-08-11T08:45:08.078Z",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 21,
+  "fields": {
+    "summary": "tvrtgrgvgegvege",
+    "descriptions": "evgevgegegergeegvegeg",
+    "status": 2,
+    "created_at": "2020-08-11T09:14:04.445Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 23,
+  "fields": {
+    "summary": "sgsagsgasfgasgasgsa",
+    "descriptions": "fack",
+    "status": 1,
+    "created_at": "2020-08-11T09:20:21.492Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 29,
+  "fields": {
+    "summary": "sgsagsgasfgasgasgsa",
+    "descriptions": "12321",
+    "status": 2,
+    "created_at": "2020-08-11T17:22:44.655Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 32,
+  "fields": {
+    "summary": "1231",
+    "descriptions": "sfsdfsdfsdf",
+    "status": 3,
+    "created_at": "2020-08-11T17:44:17.241Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 34,
+  "fields": {
+    "summary": "123132",
+    "descriptions": "rgsgsfgsgs",
+    "status": 1,
+    "created_at": "2020-08-11T17:48:18.343Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 40,
+  "fields": {
+    "summary": "\u043b\u043e\u0432\u043e\u0430\u043b\u0432\u0430\u044b",
+    "descriptions": "\u0447\u0441\u043c\u044b\u0432\u0430\u043c\u044b\u043f\u043c\u044b\u0432\u043c",
+    "status": 2,
+    "created_at": "2020-08-11T18:07:44.181Z",
+    "type": [
+      3
+    ]
   }
 },
 {
