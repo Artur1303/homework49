@@ -27,15 +27,15 @@ class TaskForm(forms.ModelForm):
     # status = forms.ModelChoiceField(queryset=Status.objects.all(), required=True, label='Статус')
     # type = forms.ModelMultipleChoiceField(queryset=Type.objects.all(), required=True, label='Тип')
 
-    def clean(self):
-            cleaned_data = super().clean()
-            errors = []
-            valid = ('mat','fack','han')
-            descriptions = cleaned_data.get('descriptions')
-            for valids in valid:
-                if descriptions == valids:
-                    errors.append(ValidationError("You used a bad word in the description"))
-                    raise ValidationError(errors)
-            return cleaned_data
+    # def clean(self):
+    #         cleaned_data = super().clean()
+    #         errors = []
+    #         valid = ('mat','fack','han')
+    #         descriptions = cleaned_data.get('descriptions')
+    #         for valids in valid:
+    #             if descriptions == valids:
+    #                 errors.append(ValidationError("You used a bad word in the description"))
+    #                 raise ValidationError(errors)
+    #         return cleaned_data
 
 
