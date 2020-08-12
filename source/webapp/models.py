@@ -1,5 +1,5 @@
 from django.db import models
-from webapp.validator import is_digit, cennz
+from webapp.validators import is_digit, cennz
 
 
 class Status(models.Model):
