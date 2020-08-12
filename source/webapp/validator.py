@@ -2,13 +2,12 @@ from django.core.exceptions import ValidationError
 
 
 def is_digit(string):
-    if string.isdigit() is True:
+    if not string.isalpha():
         raise ValidationError('Title cannot start with numbers!')
-
 
 
 def cennz(string):
     valid = ('mat', 'fack', 'han')
     for valids in valid:
-        if string == valids:
+        if valids in string:
             raise ValidationError('You used a bad word in the description')
