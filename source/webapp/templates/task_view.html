@@ -8,11 +8,32 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="my">{{task.summary }}</h1>
-    <p>{{ task.descriptions }}</p>
-     <p>Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-    <p>By: {{ task.status}} </p>
-    <p>Create: {{ task.created_at }}</p>
-    <p>Update: {{ task.update_at }}</p>
+{#    <h1 class="my">{{task.summary }}</h1>#}
+{#    <p class="font-weight-bold">{{ task.descriptions }}</p>#}
+{#     <p class="font-weight-bold">Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>#}
+{#    <p class="font-weight-bold">By: {{ task.status}} </p>#}
+{#    <p class="font-weight-bold font-italic">Create: {{ task.created_at }}</p>#}
+{#    <p class="font-weight-bold font-italic">Update: {{ task.update_at }}</p>#}
+
+<div class="card text-center">
+  <div class="card-header">
+  <h1 class="my">{{task.summary }}</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold">{{ task.descriptions }}</h5>
+    <p class="card-text font-weight-bold">Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}.<br>
+    By: {{ task.status}} </p>
+     <a href="{% url 'index' %}" class="btn btn-light">Home</a>
+     <a href="{% url 'task_update' task.pk %}" class="btn btn-light">Update</a>
+     <a href="{% url 'task_delete' task.pk %}" class="btn btn-light">Delete</a>
+
+  </div>
+  <div class="card-footer text-muted">
+      <p class=" font-italic">Create time: {{ task.created_at }}</p>
+      <p class="font-italic">Update time: {{ task.update_at }}</p>
+  </div>
+</div>
+
+
 
 {% endblock %}
