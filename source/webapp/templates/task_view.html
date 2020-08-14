@@ -13,6 +13,6 @@
      <p>Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
     <p>By: {{ task.status}} </p>
     <p>Create: {{ task.created_at }}</p>
-
+    <p>Update: {{ task.update_at }}</p>
 
 {% endblock %}
