@@ -1,0 +1,16 @@
+from django.db.models import Q,F
+from webapp.models import Task ,Status, Type
+from datetime import datetime,timedelta 
+
+Task.objects.filter(status__name__icontains='Выполненно', update_at__gt=(datetime.now()- timedelta(days=30))) 
+
+Task.objects.filter(status__name__in=['Выполненно', 'Новая'], type__name__in=['Ошибка', 'Задача']) 
+
+q1 = Q(summary__icontains='bug')
+q2 = Q(status__name__icontains='Ошибка')
+q3 = Q(type__name__icontains='Выполненно')
+Task.objects.filter( ~ q3 & (q1 | q2) )
+
+Бонус
+Task.objects.all().values('id','summary','type__name','status__name')
+Task.objects.filter(summary=F('descriptions'))
