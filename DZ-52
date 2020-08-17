@@ -14,3 +14,4 @@ Task.objects.filter( ~ q3 & (q1 | q2) )
 Бонус
 Task.objects.all().values('id','summary','type__name','status__name')
 Task.objects.filter(summary=F('descriptions'))
+Task.objects.values('type__name').annotate(qty=Count('type__name'))
