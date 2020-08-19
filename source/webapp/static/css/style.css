@@ -88,7 +88,7 @@ body {
 }
 
 .my{
-    padding-top: 50px;
+    padding-top: 60px;
     color: grey;
 }
 
@@ -125,10 +125,10 @@ body {
 
 .pagination .current-page input {
     width: 50px;
-    padding: 5px 7px;
+    padding: 3px 5px;
     font-size: inherit;
     border-radius: 5px;
     text-align: center;
     border: solid 1px gray;
-
+    font-weight: bold;
 }
