@@ -5,9 +5,11 @@
 {% block content %}
     <h1 class="my" >My Tasks</h1>
     {% include 'partial/simple_search.html' %}
-     {% if is_paginated %}
-{% include 'partial/pagination.html' %}
+    {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
 {% endif %}
+
+
     {% for task in tasks %}
         <div class="card border-dark text-white bg-secondary mb-3" style="max-width: 23rem;">
   <div class="card-body">
@@ -15,11 +17,15 @@
     <h6 class="card-subtitle mb-2 text-white">Статус: {{ task.status }}</h6>
     <a href="{% url 'task_update' task.pk %}" class="card-link badge badge-dark p-2  text-white">Update</a>
     <a href="{% url 'task_delete' task.pk %}" class="card-link badge badge-dark p-2 text-white">Delete</a>
+    <a href="{% url 'index' %}" class="card-link badge badge-dark p-2 text-white">Home</a>
 
   </div>
 </div>
+
     {% endfor %}
     {% if is_paginated %}
    {% include 'partial/pagination.html' %}
 {% endif %}
+
+
 {% endblock %}
