@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}Hello{% endblock %}
-
+{% block search%}
+     {% include 'partial/simple_search.html' %}
+{% endblock %}
 {% block content %}
+
     <h1 class="my" >My Tasks</h1>
-    {% include 'partial/simple_search.html' %}
+
     {% if is_paginated %}
    {% include 'partial/pagination.html' %}
 {% endif %}
