@@ -15,15 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from webapp.views import IndexView, TaskView,TaskCreateView,TaskUpdateView,TaskDeleteView
+from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCreat, ProjectUpdate
+from webapp.veiws.task_views import TaskView, TaskCreateView, TaskUpdateView, TaskDeleteView
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'),
+    path('', ProjectIndexView.as_view(), name='index'),
     path('task/<int:pk>/', TaskView.as_view(), name='task_view'),
-    path('tasks/add/', TaskCreateView.as_view(), name='task_create'),
+    path('project/<int:pk>/tasks/add/', TaskCreateView.as_view(), name='task_create'),
     path('task/<int:pk>/update/', TaskUpdateView.as_view(), name='task_update'),
     path('task/<int:pk>/delete/', TaskDeleteView.as_view(), name='task_delete'),
+    path('project/<int:pk>/project_view/', ProjectView.as_view(), name='project_view'),
+    path('project/add/', ProjectCreat.as_view(), name='project_create'),
+    path('project/update/<int:pk>/project_update/', ProjectUpdate.as_view(), name='project_update'),
+
 ]
 
 
