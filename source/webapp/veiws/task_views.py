@@ -6,7 +6,6 @@ from webapp.forms import TaskForm
 from webapp.models import Task, Project
 
 
-
 class TaskView(DetailView):
     template_name = 'task/task_view.html'
     model = Task
@@ -22,6 +21,7 @@ class TaskCreateView(CreateView):
         task = form.save(commit=False)
         task.project = project
         task.save()
+        form.save_m2m()
         return redirect('task_view', pk=task.pk)
 
 
