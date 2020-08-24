@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Hello{% endblock %}
+{% block search%}
+     {% include 'partial/simple_search.html' %}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="my" >Project</h1>
+
+    {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+
+
+    {% for project in projects %}
+
+        <div class="card text-center">
+  <div class="card-header"><a href="{% url 'project_view' project.pk %}"><h3 class="card-title text-black">{{ project.name }}</h3></a>
+  </div>
+  <div class="card-body">
+     <h6 class="card-subtitle mb-2 text-black"> Descriptions:{{ project.descriptions }}</h6><br>
+      <p class=" font-italic">Create time: {{ project.start_data }}</p>
+      <p class="font-italic">Update time: {{ project.end_date }}</p>
+{#      <h6 class="card-subtitle mb-2 text-black">Тип:  {% for project in project.all %}{{ project.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</h6>#}
+{#      <br>#}
+{#     <a href="{% url 'task_update' task.pk %}" class="btn btn-light m-3 ">Update</a>#}
+{#     <a href="{% url 'task_delete' task.pk %}" class="btn btn-light">Delete</a>#}
+{#     <a href="{% url 'index' %}" class="btn btn-light m-3 ">Home</a>#}
+  </div>
+
+</div>
+
+
+    {% endfor %}
+    {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block menu %}
+    <a href="{% url 'task_create' project.pk %}" class="nav-link">Create Task</a>
+{% endblock %}
+{% block content %}
+
+<div class="card text-center">
+  <div class="card-header">
+         {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+  <h1 class="my">{{project.name}}</h1>
+
+  </div>
+
+  <div class="card-body">
+    <h6 class="card-title font-weight-bold">{{ project.descriptions}}</h6>
+      <p class=" font-italic">Create time: {{ project.start_data }}</p>
+      <p class="font-italic">Update time: {{ project.end_date }}</p>
+
+
+
+{#     <a href="{% url 'index' %}" class="btn btn-light">Home</a>#}
+     <a href="{% url 'project_update' project.pk %}" class="btn btn-light">Update</a>
+{#     <a href="{% url 'task_delete' task.pk %}" class="btn btn-light">Delete</a>#}
+
+  </div>
+
+
+
+{% for task in  tasks %}
+  <div class="card-footer text-muted">
+
+      <h6 class="my"><a href="{% url 'task_view' task.pk %}">{{task.summary}}</a></h6>
+      <p>{{ task.descriptions }}</p>
+      <p>Статус: {{ task.status }}</p>
+      <p><p class="card-text font-weight-bold">Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}.</p>
+  <p>{{ task.update_at }}</p>
+  <p>{{ task.created_at }}</p>
+
+
+
+
+  </div>
+
+{% endfor %}
+{% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+</div>
+
+
+{% endblock %}

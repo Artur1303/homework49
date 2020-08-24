@@ -95,8 +95,8 @@ body {
 .pagination {
 
     text-align: center;
-    margin-top: 14px;
-    margin-bottom: 17px;
+    margin-top: 60px;
+    display: inline-block;
 }
 .pagination a, .pagination .page-disabled {
     display: inline-block;
@@ -127,12 +127,13 @@ body {
 
 .pagination .current-page input {
     width: 50px;
-    padding: 3px 5px;
+    padding: 5px 5px;
     font-size: inherit;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
     border: solid 1px gray;
     font-weight: bold;
+    background: lightgray;
 }
 .cvol{
     color: white;
