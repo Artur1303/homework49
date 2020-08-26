@@ -43,13 +43,14 @@
 },
 {
   "model": "webapp.task",
-  "pk": 1,
+  "pk": 54,
   "fields": {
-    "summary": "C\u043e\u0437\u0434\u0430\u0442\u044c \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 13",
-    "descriptions": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430  \u0434\u043b\u044f \u0441\u0430\u0439\u0442\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430 shop",
+    "project": 2,
+    "summary": "sgsagsgasfgasgasgsa",
+    "descriptions": "erwgergwergwe",
     "status": 2,
-    "created_at": "2020-08-06T10:40:54.962Z",
-    "update_at": "2020-08-14T08:03:50.339Z",
+    "created_at": "2020-08-24T08:51:38.498Z",
+    "update_at": "2020-08-24T08:51:38.499Z",
     "type": [
       2
     ]
@@ -57,360 +58,91 @@
 },
 {
   "model": "webapp.task",
+  "pk": 57,
+  "fields": {
+    "project": 6,
+    "summary": "ewgergwregweg",
+    "descriptions": "wergwergwergwergwer",
+    "status": 2,
+    "created_at": "2020-08-24T09:49:43.840Z",
+    "update_at": "2020-08-24T09:49:43.840Z",
+    "type": []
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 62,
+  "fields": {
+    "project": 2,
+    "summary": "xdhsfhdshsgf",
+    "descriptions": "sdhsfghsgfhsfgh",
+    "status": 1,
+    "created_at": "2020-08-26T05:16:10.197Z",
+    "update_at": "2020-08-26T05:16:10.197Z",
+    "type": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 63,
+  "fields": {
+    "project": 2,
+    "summary": "dfgdfgadgadg",
+    "descriptions": "afgadfgdgfhgfhjghjghkghkg",
+    "status": 2,
+    "created_at": "2020-08-26T05:16:29.366Z",
+    "update_at": "2020-08-26T05:16:29.366Z",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 64,
+  "fields": {
+    "project": 2,
+    "summary": "sfgjsfjhjfghfgkffgkfjk",
+    "descriptions": "fkjfkfjkfkfjkjk",
+    "status": 2,
+    "created_at": "2020-08-26T05:16:51.088Z",
+    "update_at": "2020-08-26T05:16:51.088Z",
+    "type": [
+      2,
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.project",
   "pk": 2,
   "fields": {
-    "summary": "\u041d\u0430\u0440\u0438\u0441\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043d\u0442\u0435\u043d\u0442 \u0434\u043b\u044f \u0433\u043b\u0430\u0432\u043d\u043e\u0439",
-    "descriptions": "\u041a\u0440\u0430\u0441\u0438\u0432\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0430",
-    "status": 2,
-    "created_at": "2020-08-06T10:41:34.779Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": []
+    "start_data": "2020-08-23",
+    "end_date": "2020-08-23",
+    "name": "\u0420\u0430\u0442\u043c\u0438\u0440",
+    "descriptions": "fehsdhsdhsdgh"
   }
 },
 {
-  "model": "webapp.task",
-  "pk": 4,
+  "model": "webapp.project",
+  "pk": 6,
   "fields": {
-    "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c  \u0444\u043e\u0440\u043c\u0443",
-    "descriptions": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c  \u0444\u043e\u0440\u043c\u0443  \u0434\u043b\u044f  \u0441\u0430\u0439\u0442\u0430",
-    "status": 1,
-    "created_at": "2020-08-06T10:42:23.616Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": []
+    "start_data": "2020-08-23",
+    "end_date": "2020-08-23",
+    "name": "\u041b\u043e\u043f\u0430\u0442\u0430rgerger",
+    "descriptions": "erwgergwergwergwerg"
   }
 },
 {
-  "model": "webapp.task",
-  "pk": 5,
-  "fields": {
-    "summary": "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c  \u0434\u0430\u043d\u043d\u044b\u0435",
-    "descriptions": "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c  \u0434\u0430\u043d\u043d\u044b\u0435 \u0441  \u0442\u043e\u0432\u0430\u0440\u043e\u043c",
-    "status": 3,
-    "created_at": "2020-08-06T10:43:04.581Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 7,
-  "fields": {
-    "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443",
-    "descriptions": "\u0421\u0442\u0440\u0430\u043d\u0438\u0446\u0430  \u0434\u043b\u044f \u0441\u0430\u0439\u0442\u0430 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430dfgdfhb",
-    "status": 1,
-    "created_at": "2020-08-06T12:31:52.476Z",
-    "update_at": "2020-08-15T07:25:53.931Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
+  "model": "webapp.project",
   "pk": 8,
   "fields": {
-    "summary": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430",
-    "descriptions": "\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430  \u0441\u0442\u0430\u0442\u044c\u0438",
-    "status": 2,
-    "created_at": "2020-08-06T18:51:29.637Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": []
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 10,
-  "fields": {
-    "summary": "\u0418\u0441\u043f\u0440\u0430\u0432\u0438\u043b  \u0433\u043b\u044f\u044e requirements.txt",
-    "descriptions": "\u043d\u0435  \u0432  \u0442\u043e\u043c  \u043c\u0435\u0441\u0442\u0435  \u0441\u043e\u0437\u0434\u0430\u043b  requirements.txt",
-    "status": 3,
-    "created_at": "2020-08-07T13:49:21.189Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": []
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 12,
-  "fields": {
-    "summary": "rfe",
-    "descriptions": "referferf",
-    "status": 2,
-    "created_at": "2020-08-11T07:03:52.680Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2,
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 13,
-  "fields": {
-    "summary": "ewgwgwrwegrweg",
-    "descriptions": "wtgtr",
-    "status": 1,
-    "created_at": "2020-08-11T07:59:38.772Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 14,
-  "fields": {
-    "summary": "zcbzvcbdsgsgsd",
-    "descriptions": "1.2",
-    "status": 1,
-    "created_at": "2020-08-11T08:45:08.078Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 21,
-  "fields": {
-    "summary": "tvrtgrgvgegvege",
-    "descriptions": "evgevgegegergeegvegeg",
-    "status": 2,
-    "created_at": "2020-08-11T09:14:04.445Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 23,
-  "fields": {
-    "summary": "sgsagsgasfgasgasgsa",
-    "descriptions": "fack",
-    "status": 1,
-    "created_at": "2020-08-11T09:20:21.492Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 29,
-  "fields": {
-    "summary": "sgsagsgasfgasgasgsa",
-    "descriptions": "12321",
-    "status": 2,
-    "created_at": "2020-08-11T17:22:44.655Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 32,
-  "fields": {
-    "summary": "1231",
-    "descriptions": "sfsdfsdfsdf",
-    "status": 3,
-    "created_at": "2020-08-11T17:44:17.241Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 34,
-  "fields": {
-    "summary": "123132",
-    "descriptions": "rgsgsfgsgs",
-    "status": 1,
-    "created_at": "2020-08-11T17:48:18.343Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 40,
-  "fields": {
-    "summary": "\u043b\u043e\u0432\u043e\u0430\u043b\u0432\u0430\u044b",
-    "descriptions": "\u0447\u0441\u043c\u044b\u0432\u0430\u043c\u044b\u043f\u043c\u044b\u0432\u043c",
-    "status": 2,
-    "created_at": "2020-08-11T18:07:44.181Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 43,
-  "fields": {
-    "summary": "111asdasd",
-    "descriptions": "aasdasdasd",
-    "status": 2,
-    "created_at": "2020-08-12T05:39:42.612Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 44,
-  "fields": {
-    "summary": "56457645dfsdf",
-    "descriptions": "dsasdvs",
-    "status": 2,
-    "created_at": "2020-08-12T05:43:13.150Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 45,
-  "fields": {
-    "summary": "456",
-    "descriptions": "gdfgdfgdfg",
-    "status": 2,
-    "created_at": "2020-08-12T05:47:13.795Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 46,
-  "fields": {
-    "summary": "12121",
-    "descriptions": "hophp",
-    "status": 2,
-    "created_at": "2020-08-12T05:54:44.168Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 47,
-  "fields": {
-    "summary": "fdhgsdfsd",
-    "descriptions": "hophp",
-    "status": 2,
-    "created_at": "2020-08-12T05:54:51.571Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 48,
-  "fields": {
-    "summary": "fdhgsdfsd123453",
-    "descriptions": "hophp",
-    "status": 2,
-    "created_at": "2020-08-12T05:54:58.044Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 49,
-  "fields": {
-    "summary": "acadcas",
-    "descriptions": "cascascasca",
-    "status": 2,
-    "created_at": "2020-08-12T06:15:26.413Z",
-    "update_at": "2020-08-14T05:03:14.086Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 50,
-  "fields": {
-    "summary": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c\u041c\u043e\u0434\u0435\u043b\u044c",
-    "descriptions": "\u044b\u0432\u0430\u044b\u0444\u0430\u044b\u0430\u044b\u0432\u0430",
-    "status": 2,
-    "created_at": "2020-08-14T06:20:15.804Z",
-    "update_at": "2020-08-14T06:20:15.804Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 51,
-  "fields": {
-    "summary": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043a \u0434\u043b\u044f",
-    "descriptions": "\u0443\u0430\u0446\u0443\u043a\u0446\u043a\u0446",
-    "status": 1,
-    "created_at": "2020-08-14T06:27:23.262Z",
-    "update_at": "2020-08-14T06:27:23.263Z",
-    "type": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 52,
-  "fields": {
-    "summary": "Bug",
-    "descriptions": "bug \u0412  \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435",
-    "status": 2,
-    "created_at": "2020-08-14T15:15:17.102Z",
-    "update_at": "2020-08-17T11:49:29.825Z",
-    "type": [
-      2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 53,
-  "fields": {
-    "summary": "Hello",
-    "descriptions": "Hello",
-    "status": 1,
-    "created_at": "2020-08-17T12:20:44.929Z",
-    "update_at": "2020-08-17T12:20:44.929Z",
-    "type": [
-      2,
-      3
-    ]
+    "start_data": "2020-08-24",
+    "end_date": "2020-08-24",
+    "name": "fdgsd",
+    "descriptions": "sdfsdfsdfsdfs"
   }
 },
 {
@@ -418,7 +150,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$Wxo6cmLefcPq$kOl3vLJrnahx4CJHxQNg1tUVOQh0mn8nb4P48GcZqKA=",
-    "last_login": "2020-08-06T10:30:09.879Z",
+    "last_login": "2020-08-23T15:10:33.876Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",

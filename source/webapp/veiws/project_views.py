@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect
 
 from django.utils.http import urlencode
-from django.views.generic import ListView,  FormView, DetailView, CreateView
+from django.views.generic import ListView,  FormView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse
 from webapp.forms import SimpleSearchForm, ProjectForm
 from webapp.models import  Project
@@ -108,3 +108,12 @@ class ProjectUpdate(FormView):
     def get_object(self):
         pk = self.kwargs.get('pk')
         return get_object_or_404(Project, pk=pk)
+
+class ProjectUpdateView(UpdateView):
+    template_name = 'project/project_update.html'
+    form_class = ProjectForm
+    model = Project
+
+
+    def get_success_url(self):
+        return reverse('article_view', kwargs={'pk': self.object.pk})

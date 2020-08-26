@@ -28,6 +28,7 @@
                   <input type="checkbox" name="project_select" id="project_select-{{ project.pk }}" value="{{ project.pk }}" ></p>
               <p class=" font-italic">Create time: {{ project.start_data }}</p>
               <p class="font-italic">Update time: {{ project.end_date }}</p>
+              <p><a href="{% url 'project_update' project.pk %}">Update</a></p>
           </div>
           </div>
         {% endfor %}
