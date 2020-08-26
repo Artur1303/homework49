@@ -98,7 +98,7 @@ body {
     margin-top: 60px;
     display: inline-block;
 }
-.pagination a, .pagination .page-disabled {
+.pagination a, .pagination .page-disabled .mass-actions input{
     display: inline-block;
     border: solid 1px #6c757d;
     border-radius: 3px;
@@ -111,7 +111,7 @@ body {
 /*    color: white;*/
 /*    text-decoration: none;*/
 /*}*/
-.pagination a:hover {
+.pagination a:hover .mass-actions input{
     background: #6c757d;
     text-decoration: underline;
 }
@@ -137,4 +137,12 @@ body {
 }
 .cvol{
     color: white;
+}
+
+.mass-actions{
+    text-align: right;
+}
+
+input[type='submit']:hover{
+    cursor: pointer;
 }

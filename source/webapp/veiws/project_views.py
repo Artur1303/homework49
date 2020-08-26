@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
-from django.shortcuts import  get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
 from django.utils.http import urlencode
 from django.views.generic import ListView,  FormView, DetailView, CreateView
@@ -10,10 +10,15 @@ from webapp.models import  Project
 
 
 class ProjectIndexView(ListView):
-    template_name = 'project/project_index.html'
+    template_name = 'project/index.html'
     context_object_name = 'projects'
-    paginate_by = 5
+    paginate_by = 2
     paginate_orphans = 0
+
+    def post(self, request, *args, **kwargs):
+        ids = self.request.POST.getlist('project_select', [])
+        Project.objects.filter(id__in=ids).delete()
+        return redirect('index')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         form = SimpleSearchForm(data=self.request.GET)

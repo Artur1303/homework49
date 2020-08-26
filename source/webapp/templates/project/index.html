@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Hello{% endblock %}
+{% block search%}
+     {% include 'partial/simple_search.html' %}
+{% endblock %}
+
+{% block content %}
+
+    <h1 class="my" >Project</h1>
+
+    {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+
+    <form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <p class="mass-actions"><input type="submit" name="delete" value="Delete selected"></p>
+            {% for project in projects %}
+
+                <div class="card text-center">
+          <div class="card-header"><a href="{% url 'project_view' project.pk %}"><h3 class="card-title text-black">{{ project.name }}</h3></a>
+          </div>
+          <div class="card-body">
+             <h6 class="card-subtitle mb-2 text-black"> Descriptions:{{ project.descriptions }}</h6><br>
+              <p>
+                  <label for="project_select-{{ project.pk }}">Select:</label>
+                  <input type="checkbox" name="project_select" id="project_select-{{ project.pk }}" value="{{ project.pk }}" ></p>
+              <p class=" font-italic">Create time: {{ project.start_data }}</p>
+              <p class="font-italic">Update time: {{ project.end_date }}</p>
+          </div>
+          </div>
+        {% endfor %}
+    </form>
+    {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+{% endblock %}
