@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 from django.utils.http import urlencode
 from django.views.generic import ListView,  FormView, DetailView, CreateView, UpdateView, DeleteView
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from webapp.forms import SimpleSearchForm, ProjectForm
 from webapp.models import  Project
 
@@ -79,41 +79,16 @@ class ProjectCreat(CreateView):
         return reverse('project_view', kwargs={'pk': self.object.pk})
 
 
-class ProjectUpdate(FormView):
-    template_name = 'project/project_update.html'
-    form_class = ProjectForm
-
-    def dispatch(self, request, *args, **kwargs):
-        self.project = self.get_object()
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['project'] = self.project
-        return context
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.pop('initial')
-        kwargs['instance'] = self.project
-        return kwargs
-
-    def form_valid(self, form):
-        self.project = form.save()
-        return super().form_valid(form)
-
-    def get_success_url(self):
-        return reverse('project_view', kwargs={'pk': self.project.pk})
-
-    def get_object(self):
-        pk = self.kwargs.get('pk')
-        return get_object_or_404(Project, pk=pk)
-
 class ProjectUpdateView(UpdateView):
     template_name = 'project/project_update.html'
     form_class = ProjectForm
     model = Project
 
-
     def get_success_url(self):
-        return reverse('article_view', kwargs={'pk': self.object.pk})
+        return reverse('project_view', kwargs={'pk': self.object.pk})
+
+
+class ProjectDeleteView(DeleteView):
+    template_name = 'project/project_delete.html'
+    model = Project
+    success_url = reverse_lazy('index')

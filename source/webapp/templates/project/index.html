@@ -13,7 +13,7 @@
    {% include 'partial/pagination.html' %}
 {% endif %}
 
-    <form action="{% url 'article_mass_action' %}" method="post">
+    <form action="{% url 'project_mass_action' %}" method="post">
     {% csrf_token %}
     <p class="mass-actions"><input type="submit" name="delete" value="Delete selected"></p>
             {% for project in projects %}
@@ -29,6 +29,7 @@
               <p class=" font-italic">Create time: {{ project.start_data }}</p>
               <p class="font-italic">Update time: {{ project.end_date }}</p>
               <p><a href="{% url 'project_update' project.pk %}">Update</a></p>
+              <p><a href="{% url 'project_delete' project.pk %}">Delete</a></p>
           </div>
           </div>
         {% endfor %}

@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import View,  FormView, DetailView, CreateView
-from django.urls import reverse
+from django.views.generic import View,  FormView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse, reverse_lazy
 from webapp.forms import TaskForm
 from webapp.models import Task, Project
 
