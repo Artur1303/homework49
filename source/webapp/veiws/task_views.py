@@ -25,36 +25,43 @@ class TaskCreateView(CreateView):
         return redirect('task_view', pk=task.pk)
 
 
-class TaskUpdateView(FormView):
+# class TaskUpdateView(FormView):
+#     template_name = 'task/task_update.html'
+#     form_class = TaskForm
+#
+#     def dispatch(self, request, *args, **kwargs):
+#         self.task = self.get_object()
+#         return super().dispatch(request, *args, **kwargs)
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['task'] = self.task
+#         return context
+#
+#     def get_form_kwargs(self):
+#         kwargs = super().get_form_kwargs()
+#         kwargs.pop('initial')
+#         kwargs['instance'] = self.task
+#         return kwargs
+#
+#     def form_valid(self, form):
+#         self.task = form.save()
+#         return super().form_valid(form)
+#
+#     def get_success_url(self):
+#         return reverse('task_view', kwargs={'pk': self.task.pk})
+#
+#     def get_object(self):
+#         pk = self.kwargs.get('pk')
+#         return get_object_or_404(Task, pk=pk)
+
+class TaskUpdateView(UpdateView):
     template_name = 'task/task_update.html'
     form_class = TaskForm
-
-    def dispatch(self, request, *args, **kwargs):
-        self.task = self.get_object()
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['task'] = self.task
-        return context
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.pop('initial')
-        kwargs['instance'] = self.task
-        return kwargs
-
-    def form_valid(self, form):
-        self.task = form.save()
-        return super().form_valid(form)
+    model = Task
 
     def get_success_url(self):
-        return reverse('task_view', kwargs={'pk': self.task.pk})
-
-    def get_object(self):
-        pk = self.kwargs.get('pk')
-        return get_object_or_404(Task, pk=pk)
-
+        return reverse('task_view', kwargs={'pk': self.object.pk})
 
 class TaskDeleteView(View):
 
