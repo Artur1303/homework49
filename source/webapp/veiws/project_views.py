@@ -15,10 +15,6 @@ class ProjectIndexView(ListView):
     paginate_by = 2
     paginate_orphans = 0
 
-    def post(self, request, *args, **kwargs):
-        ids = self.request.POST.getlist('project_select', [])
-        Project.objects.filter(id__in=ids).delete()
-        return redirect('index')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         form = SimpleSearchForm(data=self.request.GET)
@@ -36,6 +32,14 @@ class ProjectIndexView(ListView):
             if search:
                 data = data.filter(Q(name__icontains=search) | Q(descriptions__icontains=search))
         return data.order_by('end_date')
+
+
+def project_mass_action_view(request):
+    if request.method == 'POST':
+        ids = request.POST.getlist('project_select', [])
+        if 'delete' in request.POST:
+            Project.objects.filter(id__in=ids).delete()
+    return redirect('index')
 
 
 class ProjectView(DetailView):

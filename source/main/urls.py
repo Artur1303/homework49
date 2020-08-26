@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCreat, ProjectUpdate
+from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCreat, ProjectUpdate, project_mass_action_view
 from webapp.veiws.task_views import TaskView, TaskCreateView, TaskUpdateView, TaskDeleteView
 
 
@@ -30,6 +30,7 @@ urlpatterns = [
     path('project/<int:pk>/project_view/', ProjectView.as_view(), name='project_view'),
     path('project/add/', ProjectCreat.as_view(), name='project_create'),
     path('project/update/<int:pk>/project_update/', ProjectUpdate.as_view(), name='project_update'),
+    path('article/mass-action/', project_mass_action_view, name='article_mass_action'),
 
 ]
 
