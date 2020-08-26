@@ -20,7 +20,6 @@ from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCrea
 from webapp.veiws.task_views import TaskView, TaskCreateView, TaskUpdateView, TaskDeleteView
 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ProjectIndexView.as_view(), name='index'),
