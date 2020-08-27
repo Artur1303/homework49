@@ -47,12 +47,13 @@
   "fields": {
     "project": 2,
     "summary": "sgsagsgasfgasgasgsa",
-    "descriptions": "erwgergwergwe",
+    "descriptions": "erwgergwergwewvwevcw",
     "status": 2,
     "created_at": "2020-08-24T08:51:38.498Z",
-    "update_at": "2020-08-24T08:51:38.499Z",
+    "update_at": "2020-08-26T19:49:53.998Z",
     "type": [
-      2
+      2,
+      3
     ]
   }
 },
@@ -62,11 +63,13 @@
   "fields": {
     "project": 6,
     "summary": "ewgergwregweg",
-    "descriptions": "wergwergwergwergwer",
+    "descriptions": "wergwergwergwergwer2525scqddwrefw",
     "status": 2,
     "created_at": "2020-08-24T09:49:43.840Z",
-    "update_at": "2020-08-24T09:49:43.840Z",
-    "type": []
+    "update_at": "2020-08-26T20:08:21.888Z",
+    "type": [
+      2
+    ]
   }
 },
 {
@@ -81,21 +84,6 @@
     "update_at": "2020-08-26T05:16:10.197Z",
     "type": [
       2
-    ]
-  }
-},
-{
-  "model": "webapp.task",
-  "pk": 63,
-  "fields": {
-    "project": 2,
-    "summary": "dfgdfgadgadg",
-    "descriptions": "afgadfgdgfhgfhjghjghkghkg",
-    "status": 2,
-    "created_at": "2020-08-26T05:16:29.366Z",
-    "update_at": "2020-08-26T05:16:29.366Z",
-    "type": [
-      3
     ]
   }
 },
@@ -116,13 +104,43 @@
   }
 },
 {
+  "model": "webapp.task",
+  "pk": 68,
+  "fields": {
+    "project": 11,
+    "summary": "wergwergweg",
+    "descriptions": "wegergwerg",
+    "status": 2,
+    "created_at": "2020-08-26T19:39:47.480Z",
+    "update_at": "2020-08-26T19:39:47.480Z",
+    "type": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 70,
+  "fields": {
+    "project": 12,
+    "summary": "C\u043e\u0437\u0434\u0430\u0442\u044c \u0433\u043b\u0430\u0432\u043d\u0443\u044e \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 13",
+    "descriptions": "121231kljljlhjo;555",
+    "status": 2,
+    "created_at": "2020-08-26T20:25:36.847Z",
+    "update_at": "2020-08-26T20:25:45.721Z",
+    "type": [
+      3
+    ]
+  }
+},
+{
   "model": "webapp.project",
   "pk": 2,
   "fields": {
     "start_data": "2020-08-23",
     "end_date": "2020-08-23",
     "name": "\u0420\u0430\u0442\u043c\u0438\u0440",
-    "descriptions": "fehsdhsdhsdgh"
+    "descriptions": "fehsdhsdhsdgherwerwe130383"
   }
 },
 {
@@ -137,12 +155,32 @@
 },
 {
   "model": "webapp.project",
-  "pk": 8,
+  "pk": 11,
+  "fields": {
+    "start_data": "2020-08-12",
+    "end_date": "2020-08-23",
+    "name": "qrwegergwqer",
+    "descriptions": "gwergwergwerg"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 12,
+  "fields": {
+    "start_data": "2020-08-23",
+    "end_date": "2020-08-24",
+    "name": "wegergw",
+    "descriptions": "ergwergwergwerhgwqerhg"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 13,
   "fields": {
     "start_data": "2020-08-24",
     "end_date": "2020-08-24",
-    "name": "fdgsd",
-    "descriptions": "sdfsdfsdfsdfs"
+    "name": "erqgrgerg",
+    "descriptions": "qergqergqergqeg"
   }
 },
 {

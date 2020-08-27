@@ -31,6 +31,7 @@ class Task(models.Model):
 
 
 class Project(models.Model):
+    is_deleted = models.BooleanField(default=False)
     start_data = models.DateField(verbose_name='Время начала')
     end_date = models.DateField( null=True, blank=True, verbose_name='Дата окончание')
     name = models.CharField(max_length=100, verbose_name='Название')

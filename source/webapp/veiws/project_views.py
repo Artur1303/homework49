@@ -1,5 +1,6 @@
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import get_object_or_404, redirect
 
 from django.utils.http import urlencode
@@ -15,7 +16,6 @@ class ProjectIndexView(ListView):
     paginate_by = 2
     paginate_orphans = 0
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         form = SimpleSearchForm(data=self.request.GET)
         if form.is_valid():
@@ -25,7 +25,7 @@ class ProjectIndexView(ListView):
         return super().get_context_data(object_list=object_list, **kwargs)
 
     def get_queryset(self):
-        data = Project.objects.all()
+        data = Project.objects.all().filter(is_deleted=False)
         form = SimpleSearchForm(data=self.request.GET)
         if form.is_valid():
             search = form.cleaned_data['search']
@@ -51,6 +51,8 @@ class ProjectView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         project = self.object
+        if project.is_deleted:
+            raise Http404("Проект не найден")
         tasks = project.tasks.all()
         context['tasks'] = tasks
         tasks, page, is_paginated = self.paginate_tasks(self.object)
@@ -92,3 +94,11 @@ class ProjectDeleteView(DeleteView):
     template_name = 'project/project_delete.html'
     model = Project
     success_url = reverse_lazy('index')
+
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.is_deleted=True
+        self.object.save()
+        return HttpResponseRedirect(success_url)
+
