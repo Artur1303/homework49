@@ -19,6 +19,7 @@ from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCrea
     ,ProjectDeleteView
 from webapp.veiws.task_views import TaskView, TaskCreateView, TaskUpdateView, TaskDeleteView
 
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +33,9 @@ urlpatterns = [
     path('project/update/<int:pk>/project_update/', ProjectUpdateView.as_view(), name='project_update'),
     path('project/mass-action/', project_mass_action_view, name='project_mass_action'),
     path('project/delete/<int:pk>/project_delete/', ProjectDeleteView.as_view(), name='project_delete'),
+
+    path('accounts/login/', LoginView.as_view(), name='login'),
+    path('accounts/logout/', LogoutView.as_view(), name='logout')
 
 ]
 

@@ -7,7 +7,7 @@ from django.utils.http import urlencode
 from django.views.generic import ListView,  FormView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
 from webapp.forms import SimpleSearchForm, ProjectForm
-from webapp.models import  Project
+from webapp.models import Project
 
 
 class ProjectIndexView(ListView):
