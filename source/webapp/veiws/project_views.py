@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
@@ -35,6 +36,7 @@ class ProjectIndexView(ListView):
         return data.order_by('end_date')
 
 
+@login_required
 def project_mass_action_view(request):
     if request.method == 'POST':
         ids = request.POST.getlist('project_select', [])
