@@ -27,9 +27,13 @@
         <a class="nav-link" href="{% url 'project_create' %}">Create Project</a>
       </li>
         {% block menu %}{% endblock %}
-             <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+            <li><a class="nav-link" href="#">Вы зашли как {{ request.user.get_full_name }}</a></li>
+             <li><a class="nav-link" href="{% url 'accounts:logout'%}?next={{ request.get_full_path }}">Logout</a></li>
+
                 {% else %}
-                <li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                <li><a class="nav-link" href="{% url 'accounts:login'%}?next={{ request.get_full_path }}">Login</a></li>
+                 <li><a class="nav-link" href="{% url 'accounts:create'%}?next={{ request.get_full_path }}">Create</a></li>
+
      {% endif %}
     </ul>
 <div class="ml-auto">

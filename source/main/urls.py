@@ -14,9 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCreat, ProjectUpdateView, project_mass_action_view\
-    ,ProjectDeleteView
+from django.urls import path, include
+from webapp.veiws.project_views import ProjectIndexView,ProjectView, ProjectCreat, ProjectUpdateView, \
+    project_mass_action_view, ProjectDeleteView
 from webapp.veiws.task_views import TaskView, TaskCreateView, TaskUpdateView, TaskDeleteView
 
 from django.contrib.auth.views import LoginView, LogoutView
@@ -34,8 +34,7 @@ urlpatterns = [
     path('project/mass-action/', project_mass_action_view, name='project_mass_action'),
     path('project/delete/<int:pk>/project_delete/', ProjectDeleteView.as_view(), name='project_delete'),
 
-    path('accounts/login/', LoginView.as_view(), name='login'),
-    path('accounts/logout/', LogoutView.as_view(), name='logout')
+    path('accounts/', include('accounts.urls'))
 
 ]
 
