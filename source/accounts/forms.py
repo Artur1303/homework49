@@ -13,7 +13,7 @@ class MyUserCreationForm(UserCreationForm):
         last_name = cleaned_data.get("last_name")
         first_name = cleaned_data.get("first_name")
 
-        if last_name in first_name == '':
+        if not last_name and not first_name:
             raise forms.ValidationError("Заполните поли хотябы  одно  поле Last_name или First_name")
 
         return cleaned_data
