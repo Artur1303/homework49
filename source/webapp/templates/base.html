@@ -31,9 +31,14 @@
              <li><a class="nav-link" href="{% url 'accounts:logout'%}?next={{ request.get_full_path }}">Logout</a></li>
 
                 {% else %}
-                <li><a class="nav-link" href="{% url 'accounts:login'%}?next={{ request.get_full_path }}">Login</a></li>
-                 <li><a class="nav-link" href="{% url 'accounts:create'%}?next={{ request.get_full_path }}">SignUp</a></li>
-
+            {% if request.GET.next %}
+                    <li><a class="nav-link" href="{% url 'accounts:login'%}?next={{request.GET.next }}">Login</a></li>
+                    <li><a class="nav-link" href="{% url 'accounts:create'%}?next={{ request.GET.next }}">SignUp</a></li>
+                {% else %}
+                     <li><a class="nav-link" href="{% url 'accounts:login'%}?next={{ request.get_full_path }}">Login</a></li>
+                    <li><a class="nav-link" href="{% url 'accounts:create'%}?next={{ request.get_full_path }}">SignUp</a></li>
+                     {% endif %}
+                 
      {% endif %}
     </ul>
 <div class="ml-auto">
