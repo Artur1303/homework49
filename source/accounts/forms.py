@@ -3,10 +3,7 @@ from django import forms
 
 
 class MyUserCreationForm(UserCreationForm):
-    def __init__(self, *args, **kwargs):
-        super(MyUserCreationForm, self).__init__(*args, **kwargs)
-
-        self.fields['email'].required = True
+    email = forms.EmailField(required=True)
 
     def clean(self):
         cleaned_data = super(MyUserCreationForm, self).clean()
