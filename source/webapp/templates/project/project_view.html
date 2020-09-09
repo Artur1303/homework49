@@ -21,28 +21,34 @@
       <p class=" font-italic">Create time: {{ project.start_data }}</p>
       <p class="font-italic">Update time: {{ project.end_date }}</p>
 
-
-
-{#     <a href="{% url 'index' %}" class="btn btn-light">Home</a>#}
-     <a href="{% url 'project_update' project.pk %}" class="btn btn-light">Update</a>
-     <a href="{% url 'project_delete' project.pk %}" class="btn btn-light">Delete</a>
-
+    {% if request.user.is_authenticated %}
+        {% if perms.auth.add_user and perms.auth.delete_user and request.user in project.users.all%}
+            <a href="{% url 'add_user' project.pk %}" class="btn btn-light">AddUser</a>
+        {% endif %}
+        {% if perms.webapp.change_task and request.user in project.users.all%}
+      <a href="{% url 'project_update' project.pk %}" class="btn btn-light">Update</a>
+            {% endif %}
+        {% if perms.webapp.delete_task and request.user in project.users.all%}
+      <a href="{% url 'project_delete' project.pk %}" class="btn btn-light">Delete</a>
+        {% endif %}
+    {% endif %}
   </div>
 
 
+{% for person in project.users.all %}
 
+      <p>{{ person.username }}</p>
+      {% endfor %}
 {% for task in  tasks %}
   <div class="card-footer text-muted">
 
       <h6 class="my"><a href="{% url 'task_view' task.pk %}">{{task.summary}}</a></h6>
       <p>{{ task.descriptions }}</p>
       <p>Статус: {{ task.status }}</p>
+
       <p><p class="card-text font-weight-bold">Type: {% for type in task.type.all %}{{ type.name }}{% if not forloop.last %}, {% endif %}{% endfor %}.</p>
   <p>{{ task.update_at }}</p>
   <p>{{ task.created_at }}</p>
-
-
-
 
   </div>
 

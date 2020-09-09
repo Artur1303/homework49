@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from webapp.validators import is_digit, cennz
 
@@ -22,7 +23,7 @@ class Task(models.Model):
     summary = models.CharField(max_length=100, verbose_name='Заголовок',validators=[is_digit])
     descriptions = models.TextField(max_length=3000, null=True, blank=True, verbose_name='Описание', validators=[cennz])
     status = models.ForeignKey('webapp.Status', on_delete=models.PROTECT, verbose_name='Статус')
-    type =  models.ManyToManyField('webapp.Type',related_name='tasks', verbose_name='Тип')
+    type = models.ManyToManyField('webapp.Type', related_name='tasks', verbose_name='Тип')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     update_at = models.DateTimeField(auto_now=True, verbose_name='Время обновления')
 
@@ -31,9 +32,11 @@ class Task(models.Model):
 
 
 class Project(models.Model):
+    users = models.ManyToManyField(get_user_model(),  default=1, related_name='project',
+                                   verbose_name='Пользователи')
     is_deleted = models.BooleanField(default=False)
     start_data = models.DateField(verbose_name='Время начала')
-    end_date = models.DateField( null=True, blank=True, verbose_name='Дата окончание')
+    end_date = models.DateField(null=True, blank=True, verbose_name='Дата окончание')
     name = models.CharField(max_length=100, verbose_name='Название')
     descriptions = models.TextField(max_length=3000, verbose_name='Описание')
 

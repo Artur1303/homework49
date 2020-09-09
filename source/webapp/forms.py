@@ -14,5 +14,14 @@ class ProjectForm(forms.ModelForm):
         fields = ['start_data', 'end_date', 'name', 'descriptions']
 
 
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        fields = ['users']
+        widgets = {'users': forms.CheckboxSelectMultiple}
+
+
 class SimpleSearchForm(forms.Form):
     search = forms.CharField(max_length=100, required=False, label="Найти")
+
+

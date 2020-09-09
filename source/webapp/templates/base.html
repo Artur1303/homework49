@@ -24,7 +24,9 @@
       </li>
         {% if request.user.is_authenticated %}
       <li class="nav-item">
+      {% if perms.webapp.add_project %}
         <a class="nav-link" href="{% url 'project_create' %}">Create Project</a>
+          {% endif %}
       </li>
         {% block menu %}{% endblock %}
             <li><a class="nav-link" href="#">Вы зашли как {{ request.user.get_full_name|default:request.user.username }}</a></li>

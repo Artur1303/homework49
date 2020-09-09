@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.http import HttpResponseRedirect, Http404
@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404, redirect
 from django.utils.http import urlencode
 from django.views.generic import ListView,  FormView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
-from webapp.forms import SimpleSearchForm, ProjectForm
+from webapp.forms import SimpleSearchForm, ProjectForm, UserForm
 from webapp.models import Project
 
 
@@ -76,28 +76,31 @@ class ProjectView(DetailView):
             return tasks, None, False
 
 
-class ProjectCreat(LoginRequiredMixin, CreateView):
+class ProjectCreat(PermissionRequiredMixin, CreateView):
     template_name = 'project/project_create.html'
     model = Project
     form_class = ProjectForm
+    permission_required = 'webapp.add_project'
 
     def get_success_url(self):
         return reverse('project_view', kwargs={'pk': self.object.pk})
 
 
-class ProjectUpdateView(LoginRequiredMixin, UpdateView):
+class ProjectUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'project/project_update.html'
     form_class = ProjectForm
     model = Project
+    permission_required = 'webapp.change_project'
 
     def get_success_url(self):
         return reverse('project_view', kwargs={'pk': self.object.pk})
 
 
-class ProjectDeleteView(LoginRequiredMixin, DeleteView):
+class ProjectDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'project/project_delete.html'
     model = Project
     success_url = reverse_lazy('index')
+    permission_required = 'webapp.delete_project'
 
     def delete(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -106,3 +109,18 @@ class ProjectDeleteView(LoginRequiredMixin, DeleteView):
         self.object.save()
         return HttpResponseRedirect(success_url)
 
+
+class UserView(PermissionRequiredMixin, UpdateView):
+    template_name = 'project/users.html'
+    form_class = UserForm
+    model = Project
+    # permission_required = ('auth.add_user', 'auth.delete_user')
+
+    def has_permission(self):
+        project = self.get_object()
+        user1=self.request.user
+        print(user1)
+        return user1.groups.filter(name__in=('Project Manager', 'Team Lead')) and user1 in project.users.all()
+
+    def get_success_url(self):
+        return reverse('project_view', kwargs={'pk': self.object.pk})
