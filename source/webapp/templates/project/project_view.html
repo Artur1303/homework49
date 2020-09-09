@@ -3,7 +3,9 @@
 {% block title %}View{% endblock %}
 
 {% block menu %}
+      {% if  perms.webapp.add_task and request.user in project.users.all%}
     <a href="{% url 'task_create' project.pk %}" class="nav-link">Create Task</a>
+    {% endif %}
 {% endblock %}
 {% block content %}
 
