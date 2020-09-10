@@ -85,7 +85,7 @@ class ProjectCreat(PermissionRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse('project_view', kwargs={'pk': self.object.pk})
 
-
+    
 class ProjectUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'project/project_update.html'
     form_class = ProjectForm
