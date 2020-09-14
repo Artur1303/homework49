@@ -2,9 +2,16 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
-from django.views.generic import CreateView
-
+from django.views.generic import CreateView, DetailView
 from accounts.forms import MyUserCreationForm
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class UserDetailView(LoginRequiredMixin, DetailView):
+    model = get_user_model()
+    template_name = 'user_detail.html'
+    context_object_name = 'user_obj'
 
 
 class RegisterView(CreateView):
