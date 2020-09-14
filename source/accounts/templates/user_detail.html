@@ -12,7 +12,9 @@
     {% if user_obj.profile.avatar %}
         <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250" alt="user picture">
     {% endif %}
+{% if b  %}
     <a href="{{ user_obj.profile.profile_github }}" class="d-block mt-4"> Github Profile</a>
+{% endif %}user_obj.profile.profile_githu
     <br>
    <h2>О себе: {{ user_obj.profile.about_myself }}</h2>
 
