@@ -1,0 +1,31 @@
+{% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}
+
+    <form action="{% url 'project_mass_action' %}" method="post">
+    {% csrf_token %}
+    <p class="mass-actions"><input type="submit" name="delete" value="Delete selected"></p>
+            {% for project in projects %}
+                <div class="card text-center">
+          <div class="card-header"><a href="{% url 'project_view' project.pk %}"><h3 class="card-title text-black">{{ project.name }}</h3></a>
+          </div>
+          <div class="card-body">
+             <h6 class="card-subtitle mb-2 text-black"> Descriptions:{{ project.descriptions }}</h6><br>
+              <p>
+                  <label for="project_select-{{ project.pk }}">Select:</label>
+                  <input type="checkbox" name="project_select" id="project_select-{{ project.pk }}" value="{{ project.pk }}" ></p>
+              <p class=" font-italic">Create time: {{ project.start_data }}</p>
+              <p class="font-italic">Update time: {{ project.end_date }}</p>
+               {% if perms.webapp.change_project and request.user in project.users.all%}
+              <p><a href="{% url 'project_update' project.pk %}">Update</a></p>
+              {% endif %}
+            {% if perms.webapp.delete_project and request.user in project.users.all%}
+              <p><a href="{% url 'project_delete' project.pk %}">Delete</a></p>
+          {% endif %}
+          </div>
+          </div>
+        {% endfor %}
+    </form>
+    {% if is_paginated %}
+   {% include 'partial/pagination.html' %}
+{% endif %}

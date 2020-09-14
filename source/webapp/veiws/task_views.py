@@ -26,6 +26,9 @@ class TaskCreateView(PermissionRequiredMixin, CreateView):
         form.save_m2m()
         return redirect('task_view', pk=task.pk)
 
+    def has_permission(self):
+        return super().has_permission() and (self.request.user in self.get_object().project.users.all())
+
 
 class TaskUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'task/task_update.html'

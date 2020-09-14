@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for object in users %}
+
+    <div class="mt-5">
+    {% if object.profile.avatar %}
+        <img  src="{{ object.profile.avatar.url }}" width="50" height="50" alt="user picture">
+    {% endif %}
+    <a class="" href="{% url 'accounts:detail' object.pk%}"> <p>{{ object.username }}</p></a>
+</div>
+{% endfor %}
+
+{% endblock %}

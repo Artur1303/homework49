@@ -39,7 +39,7 @@
 
 {% for person in project.users.all %}
 
-      <p>{{ person.username }}</p>
+    <a href="{% url 'accounts:detail' person.pk%}"> <p>{{ person.username }}</p></a>
       {% endfor %}
 {% for task in  tasks %}
   <div class="card-footer text-muted">

@@ -2,10 +2,10 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, ListView
 from accounts.forms import MyUserCreationForm
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -31,3 +31,15 @@ class RegisterView(CreateView):
         if not next_url:
             next_url = reverse('index')
         return next_url
+
+
+class UserList(PermissionRequiredMixin, ListView):
+    model = get_user_model()
+    template_name = 'user_list.html'
+    context_object_name = 'users'
+    permission_required = 'accounts.viewing_the_list_of_users'
+
+
+
+
+

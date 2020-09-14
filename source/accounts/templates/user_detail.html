@@ -15,5 +15,13 @@
     <a href="{{ user_obj.profile.profile_github }}" class="d-block mt-4"> Github Profile</a>
     <br>
    <h2>О себе: {{ user_obj.profile.about_myself }}</h2>
+
+ <p>Имя пользователя: {{ user_obj.username }}</p>
+    <p>Имя: {{ user_obj.first_name }}</p>
+    <p>Фамилия: {{ user_obj.last_name }}</p>
+    <p>Почта: {{ user_obj.email }}</p>
+    {% include 'partial/project_list.html' with projects=user_obj.project.all %}
+
+
 </div>
 {% endblock %}
