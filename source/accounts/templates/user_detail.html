@@ -6,15 +6,15 @@
 {% block menu %}
 {% endblock %}
 {% block content %}
-<div class="container">
+<div class="container pt-4">
 
     <h3 class="mt-5">User: {{ user_obj.username }}</h3>
     {% if user_obj.profile.avatar %}
         <img class="avatar" src="{{ user_obj.profile.avatar.url }}" width="250" height="250" alt="user picture">
     {% endif %}
-{% if b  %}
+{% if user_obj.profile.profile_github  %}
     <a href="{{ user_obj.profile.profile_github }}" class="d-block mt-4"> Github Profile</a>
-{% endif %}user_obj.profile.profile_githu
+{% endif %}
     <br>
    <h2>О себе: {{ user_obj.profile.about_myself }}</h2>
 
