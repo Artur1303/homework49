@@ -5,6 +5,7 @@
 {% endblock %}
 {% block menu %}
     <li><a class="nav-link" href="{% url 'accounts:change' user_obj.pk%}">Редактировать</a></li>
+    <li><a class="nav-link" href="{% url 'accounts:password' user_obj.pk %}">Смена пароля</a></li>
 {% endblock %}
 {% block content %}
 <div class="container pt-4">
