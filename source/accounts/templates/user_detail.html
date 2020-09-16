@@ -4,9 +4,10 @@
     {{ user_obj.get_full_name }}
 {% endblock %}
 {% block menu %}
+    <li><a class="nav-link" href="{% url 'accounts:change' user_obj.pk%}">Редактировать</a></li>
 {% endblock %}
 {% block content %}
-<div class="container">
+<div class="container pt-4">
 
     <h3 class="mt-5">User: {{ user_obj.username }}</h3>
     {% if user_obj.profile.avatar %}
