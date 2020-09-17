@@ -1,11 +1,12 @@
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from accounts.forms import MyUserCreationForm, UserChangeForm, ProfileChangeForm, PasswordChangeForm
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from .models import Profile
 
 
@@ -43,11 +44,14 @@ class UserList(PermissionRequiredMixin, ListView):
     permission_required = 'accounts.viewing_the_list_of_users'
 
 
-class UserChangeView(UpdateView):
+class UserChangeView(UserPassesTestMixin, UpdateView):
     model = get_user_model()
     form_class = UserChangeForm
     template_name = 'user_change.html'
     context_object_name = 'user_obj'
+
+    def test_func(self):
+        return self.request.user == self.get_object()
 
     def get_context_data(self, **kwargs):
         if 'profile_form' not in kwargs:
@@ -89,5 +93,13 @@ class UserPasswordChangeView(UpdateView):
     form_class = PasswordChangeForm
     context_object_name = 'user_obj'
 
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def form_valid(self, form):
+        user = form.save()
+        update_session_auth_hash(self.request, user)
+        return HttpResponseRedirect(self.get_success_url())
+
     def get_success_url(self):
-        return reverse('accounts:login')
+        return reverse('accounts:detail', kwargs={'pk': self.object.pk})
