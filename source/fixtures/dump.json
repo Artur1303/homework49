@@ -417,5 +417,55 @@
       2
     ]
   }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "avatar": "user_pics/pycharm.png",
+    "profile_github": "https://github.com/Artur1303",
+    "about_myself": "\u042f \u043c\u0435\u0433\u0430 \u0430\u0434\u043c\u0438\u043d"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 6,
+    "avatar": "user_pics/lion-space-digital-art-photo-manipulation.jpeg",
+    "profile_github": null,
+    "about_myself": ""
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "avatar": "",
+    "profile_github": null,
+    "about_myself": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": 7,
+    "avatar": "",
+    "profile_github": null,
+    "about_myself": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "user": 20,
+    "avatar": "",
+    "profile_github": "https://github.com/Artur1303",
+    "about_myself": ""
+  }
 }
 ]
